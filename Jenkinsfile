@@ -20,6 +20,7 @@ pipeline {
                         sh 'docker build -t turalasgar/demo-app:jma-4.0 .'
                         sh 'echo $PASS | docker login -u $USER --password-stdin'
                         sh 'docker push turalsagar/demo-app:jma-4.0'
+                        sh 'docker rmi turalasgar/demo-app:jma-4.0'
                     }
                 }
             }
